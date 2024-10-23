@@ -1,0 +1,117 @@
+body {
+  @apply bg-white text-gray-900;
+}
+
+.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+.index-module_type__E-SaG::after {
+  content: '|';
+  animation: index-module_cursor__PQg0P 1.1s infinite step-start;
+}
+
+@keyframes index-module_cursor__PQg0P {
+  50% {
+      opacity: 0;
+  }
+}
+
+/* Contoh CSS */
+aside {
+  width: 250px; /* Lebar sidebar */
+}
+
+main {
+  padding: 20px; /* Padding di area konten utama */
+}
+
+.github-icon {
+  width: 80px; /* Default size for small screens */
+  height: 80px; 
+  background: linear-gradient(to right, #696969, #F0F7FF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Circular background */
+  position: relative; 
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .github-icon {
+    width: 110px; /* Larger size for medium and up screens */
+    height: 110px; 
+  }
+}
+
+.github-icon img {
+  width: 65%; /* Adjust the size of the icon relative to the container */
+  height: auto;
+  margin-top: 66%; /* Adjust the position for small screens */
+  z-index: 1;
+  margin-left: 18%;
+}
+
+@media (min-width: 768px) {
+  .github-icon img {
+    margin-top: 56px; /* Restore margin for larger screens */
+    
+  }
+}
+
+
+
+@keyframes rotateClockwise {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotateClockwiseu {
+  from {
+      transform: rotate(-360deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-1000px); /* Mulai dari -100px di luar layar */
+  }
+  100% {
+    transform: translateX(0px); /* Akhir di posisi normal */
+    ; /* Buat elemen terlihat saat animasi selesai */
+  }
+}
+
+.social {
+  animation: slideInFromLeft 3s ease-out forwards; /* Durasi 1 detik, bisa disesuaikan */
+}
+
+.rotate-clockwise {
+  animation: rotateClockwise 5S linear infinite;
+}
+
+.rotate-counterclockwise {
+  animation: rotateCounterClockwise 5S linear infinite;
+}
+
+.rotate-clockwiseu {
+  animation: rotateClockwiseu 3s linear 1; /* Hanya berputar sekali */
+  animation-fill-mode: forwards; /* Agar tetap pada posisi akhir setelah animasi selesai */
+}
