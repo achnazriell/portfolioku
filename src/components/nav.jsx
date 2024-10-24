@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { SunIcon, MoonIcon } from '@heroicons/react/solid';
 
 const Nav = () => {
@@ -7,7 +8,7 @@ const Nav = () => {
         const savedMode = localStorage.getItem('darkMode');
         return savedMode !== null ? JSON.parse(savedMode) : true; // default true
     });
-    
+
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -65,10 +66,11 @@ const Nav = () => {
                         {darkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
                     </button>
                     <ul className="flex flex-col mb-9 text-2xl gap-12 text-center font-semibold text-gray-700 dark:text-gray-200">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/technology">Technology</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                        <li><a href="6281938986696">Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/technology">Technology</Link></li>
+                        <li><Link to="/projects">Projects</Link></li>
+                        <li><a href="https://wa.me/6281938986696">Contact</a></li>
+
                     </ul>
                 </div>
             </nav>
