@@ -37,11 +37,11 @@ const Nav = () => {
     return (
         <>
             <nav className="backdrop-blur-md sticky top-0 z-50 hidden sm:flex items-center justify-between px-10 py-5 text-gray-800 dark:text-white">
-                <Link className="text-lg font-mono" to="/">
+                <Link className="lg:text-lg md:text-sm font-mono" to="/">
                     <h1>Achmad Nazriel Pradita</h1>
                     <div className="text-gray-500 dark:text-gray-400">Front-end Developer</div>
                 </Link>
-                <ul className="text-xl flex items-center fixed md:right-40 lg:right-96 gap-16 nav">
+                <ul className="lg:text-xl md:text-base flex items-center fixed md:right-32 lg:right-96 gap-16 nav">
                     {/* Ganti <a> dengan <Link> untuk navigasi internal */}
                     <li>
                         <Link className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' to="/technology">
