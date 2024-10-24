@@ -53,7 +53,7 @@ const Home = () => {
                     <div className="text-center text-gray-500 dark:text-gray-400">
                         <div className="text-2xl lg:text-5xl font-bold">
                             <span>Hello,</span>
-                            <h2 id="typewriter" className="index-module_type__E-SaG text-gray-800 dark:text-white font-semibold flex space-x-1 font-mono">
+                            <h2 id="typewriter" className="index-module_type__E-SaG text-gray-800 dark:text-white  flex space-x-1 font-mono">
                                 I'am {text}
                             </h2>
                         </div>
