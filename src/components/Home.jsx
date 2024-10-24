@@ -144,7 +144,7 @@ const Home = () => {
 
                     {/* Container flex untuk heading dan ikon GitHub */}
                     <div className="flex items-center justify-between w-full mt-2">
-                        <h4 className="font-bold text-xl">Manajemen Makanan</h4>
+                        <h4 className="font-bold text-xl">Manajemen Restoran</h4>
 
                         {/* Ikon GitHub di samping heading */}
                         <a href="https://github.com/acmassirau/comics.git" className="lg:mr-10 mr-2">

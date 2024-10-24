@@ -41,7 +41,7 @@ const Nav = () => {
                     <h1>Achmad Nazriel Pradita</h1>
                     <div className="text-gray-500 dark:text-gray-400">Front-end Developer</div>
                 </Link>
-                <ul className="text-xl flex items-center fixed right-96 gap-16 nav">
+                <ul className="text-xl flex items-center fixed right-60 lg:right-96 gap-16 nav">
                     {/* Ganti <a> dengan <Link> untuk navigasi internal */}
                     <li>
                         <Link className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' to="/technology">
