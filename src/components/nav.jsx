@@ -37,14 +37,28 @@ const Nav = () => {
     return (
         <>
             <nav className="backdrop-blur-md sticky top-0 z-50 hidden sm:flex items-center justify-between px-10 py-5 text-gray-800 dark:text-white">
-                <a className="text-lg font-mono" href="/">
+                <Link className="text-lg font-mono" to="/">
                     <h1>Achmad Nazriel Pradita</h1>
                     <div className="text-gray-500 dark:text-gray-400">Front-end Developer</div>
-                </a>
-                <ul className="text-xl flex items-center fixed right-96 gap-16 nav ">
-                    <li><a className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' href="/technology">Technology</a></li>
-                    <li><a className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' href="/projects">Projects</a></li>
-                    <li><a className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' href="https://wa.me/6281938986696">Contact</a></li>
+                </Link>
+                <ul className="text-xl flex items-center fixed right-96 gap-16 nav">
+                    {/* Ganti <a> dengan <Link> untuk navigasi internal */}
+                    <li>
+                        <Link className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' to="/technology">
+                            Technology
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' to="/projects">
+                            Projects
+                        </Link>
+                    </li>
+                    <li>
+                        {/* Untuk link eksternal, tetap gunakan <a> */}
+                        <a className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' href="https://wa.me/6281938986696">
+                            Contact
+                        </a>
+                    </li>
                 </ul>
                 <button onClick={toggleDarkMode} className="ml-4 p-2 bg-gray-200 rounded-full dark:bg-gray-700 text-gray-900 dark:text-white">
                     {darkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
@@ -66,11 +80,12 @@ const Nav = () => {
                         {darkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
                     </button>
                     <ul className="flex flex-col mb-9 text-2xl gap-12 text-center font-semibold text-gray-700 dark:text-gray-200">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/technology">Technology</Link></li>
-                        <li><Link to="/projects">Projects</Link></li>
-                        <li><a href="https://wa.me/6281938986696">Contact</a></li>
-
+                        {/* Menutup menu setelah klik */}
+                        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+                        <li><Link to="/technology" onClick={toggleMenu}>Technology</Link></li>
+                        <li><Link to="/projects" onClick={toggleMenu}>Projects</Link></li>
+                        {/* Untuk link eksternal */}
+                        <li><a href="https://wa.me/6281938986696" onClick={toggleMenu}>Contact</a></li>
                     </ul>
                 </div>
             </nav>
