@@ -174,7 +174,7 @@ const Home = () => {
                     Need Help ?
                 </h2>
                 <div className='flex justify-center text-xxs lg:text-sm mt-5'>
-                    <a href="https://wa.me/6281938986696" >
+                    <a href="https://acmassirau@gmail.com" >
                         <button className='border-blue-500 border-2 rounded-3xl px-4 py-2 font-medium hover:bg-blue-700'>Contact Me</button>
                     </a>
                 </div>

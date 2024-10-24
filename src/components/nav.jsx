@@ -55,7 +55,7 @@ const Nav = () => {
                     </li>
                     <li>
                         {/* Untuk link eksternal, tetap gunakan <a> */}
-                        <a className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' href="https://wa.me/6281938986696">
+                        <a className='relative text-xl text-gray-900 dark:text-white hover:before:w-full before:transition-all before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-gray-900 dark:before:bg-white' href="acmassirau@gmail.com">
                             Contact
                         </a>
                     </li>
@@ -85,7 +85,7 @@ const Nav = () => {
                         <li><Link to="/technology" onClick={toggleMenu}>Technology</Link></li>
                         <li><Link to="/projects" onClick={toggleMenu}>Projects</Link></li>
                         {/* Untuk link eksternal */}
-                        <li><a href="https://wa.me/6281938986696" onClick={toggleMenu}>Contact</a></li>
+                        <li><a href="acmassirau@gmail.com" onClick={toggleMenu}>Contact</a></li>
                     </ul>
                 </div>
             </nav>
