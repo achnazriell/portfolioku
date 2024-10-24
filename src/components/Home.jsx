@@ -174,7 +174,7 @@ const Home = () => {
                     Need Help ?
                 </h2>
                 <div className='flex justify-center text-xxs lg:text-sm mt-5'>
-                    <a href="https://acmassirau@gmail.com" >
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=acmassirau@gmail.com&su=Hello " >
                         <button className='border-blue-500 border-2 rounded-3xl px-4 py-2 font-medium hover:bg-blue-700'>Contact Me</button>
                     </a>
                 </div>
