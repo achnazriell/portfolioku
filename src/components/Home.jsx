@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
 
 const Home = () => {
-    const words = ["Ach Nazriel Pradita", "Front-end Developer"];
+    const words = ["Achmad Nazriel Pradita", "Front-end Developer"];
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
@@ -54,7 +54,7 @@ const Home = () => {
                         <div className="text-1xl lg:text-5xl font-bold">
                             <span>Hello,</span>
                             <h2 id="typewriter" className="index-module_type__E-SaG text-gray-800 dark:text-white  flex space-x-1 font-mono">
-                                I'm {text}
+                                I'am {text}
                             </h2>
                         </div>
                         <div className="pt-2 mb-10">
