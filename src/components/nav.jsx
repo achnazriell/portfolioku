@@ -79,7 +79,7 @@ const Nav = () => {
                         className="absolute top-6 left-9 text-5xl md:text-3xl bg-gray-200 rounded-full dark:bg-gray-700 text-gray-900 dark:text-white" >
                         {darkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
                     </button>
-                    <ul className="flex flex-col text-3xl gap-20 text-center font-semibold text-gray-700 dark:text-gray-200">
+                    <ul className="flex flex-col text-3xl gap-20 text-center font-poppins font-semibold text-gray-700 dark:text-gray-200">
                         {/* Menutup menu setelah klik */}
                         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
                         <li><Link to="/technology" onClick={toggleMenu}>Technology</Link></li>
