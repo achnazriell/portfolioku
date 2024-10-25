@@ -4,14 +4,14 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
-      lineHeight: {
-        '1xl': '1.50',
-      },
       fontSize: {
         'xxs': '0.500rem',
         '2xs': '0.600rem', // Ukuran lebih kecil dari text-xs (10px)
         '1xl': '1.100rem',
-           },
+      },
+      lineHeight: {
+        '1xl': '3.50',
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Tambahkan Poppins sebagai font kustom
       },
