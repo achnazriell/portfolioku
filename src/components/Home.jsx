@@ -59,7 +59,7 @@ const Home = () => {
                         </div>
                         <div className="pt-2 mb-10">
                             <p className="text-lg md:text-3xl">Specialized in</p>
-                            <p className="text-2xl md:text-4xl font-semibold py-2 text-gray-800 dark:text-white">Websites</p>
+                            <p className="text-xl md:text-4xl font-semibold py-2 text-gray-800 dark:text-white">Websites</p>
                         </div>
                     </div>
                     <div className="flex right-32 items-center space-x-7 lg:space-x-14 social slide-in-left">
