@@ -51,10 +51,10 @@ const Home = () => {
             <div className="flex-1 p-6 lg:p-8 lg:mb-28 mb-3">
                 <section className="lg:h-[85vh] lg:max-h-[500px] mb-14 lg:mb-20 mt-6 flex flex-col text-center items-center">
                     <div className="text-center text-gray-500 dark:text-gray-400">
-                        <div className="text-2xl lg:text-5xl font-bold">
+                        <div className="text-1xl lg:text-5xl font-bold">
                             <span>Hello,</span>
                             <h2 id="typewriter" className="index-module_type__E-SaG text-gray-800 dark:text-white  flex space-x-1 font-mono">
-                                I'am {text}
+                                I'm {text}
                             </h2>
                         </div>
                         <div className="pt-2 mb-10">
