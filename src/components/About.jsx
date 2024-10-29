@@ -51,7 +51,7 @@ const About = () => {
                         <p ref={paragraphRef} className="font-poppins text-xs mr-4  lg:mr-36 lg:text-xl mb-20 text-gray-600 dark:text-gray-300 animate-fadeInLeft">
                             My name is Achmad Nazriel Pradita, I'm from Mojokerto and now I'm learning React as a Front-end developer. I'm learning React by self-exploration because it feels fun for me to do this and I also do freelance projects. I'm a 2nd grade student at SMKN 1 Dlanggu majoring in Rekayasa Perangkat Lunak (Software Engineering) who has a lot of interest in development, especially in websites, and I am currently exploring React.
                         </p>
-                            <img src='me.png' className="w-0 h-0 lg:w-80 lg:h-52 lg:mb-24" />
+                            <img src='me.png' className="w-0 h-0 lg:w-96 lg:h-60 lg:mb-24" />
                     </div>
                 </section>
             </div>
