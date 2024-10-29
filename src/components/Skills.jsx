@@ -59,7 +59,7 @@ const Skills = () => {
             )}
             <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6">
                 <div className="aos-init aos-animate" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                    <img class="hover-image" src="/avatar.png" alt="React" className="h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" />
+                    <img src="/avatar.png" alt="React" className="hover-image h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" />
                 </div>
                 <section className="flex-1 lg:p-6 lg:pt-8">
                     {/* Adjust the margin-top to bring the text higher */}
