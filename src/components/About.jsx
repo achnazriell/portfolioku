@@ -52,7 +52,7 @@ const About = () => {
                             My name is Achmad Nazriel Pradita, I'm from Mojokerto and now I'm learning React as a Front-end developer. I'm learning React by self-exploration because it feels fun for me to do this and I also do freelance projects. I'm a 2nd grade student at SMKN 1 Dlanggu majoring in Rekayasa Perangkat Lunak (Software Engineering) who has a lot of interest in development, especially in websites, and I am currently exploring React.
                         </p>
 
-                        <div className="w-0 h-0 p-0 mb-0  lg:w-60 lg:h-60 lg:p-3 lg:mb-20 rounded-xl border-gray-600 dark:border-gray-300 text-gray-600 dark:text-gray-300 order-last">
+                        <div className="w-0 h-0 p-0 mb-0  lg:w-60 lg:h-60 lg:p-3 lg:mb-20 text-gray-600 dark:text-gray-300 order-last">
                             <img src='me.png' className="w-0 h-0 lg:w-52 lg:h-52" />
                         </div>
                     </div>
