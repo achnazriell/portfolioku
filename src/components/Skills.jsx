@@ -8,6 +8,21 @@ const Skills = () => {
     const [displayedText, setDisplayedText] = useState('');
     const fullText = 'These are some of the technologies I regularly work with';
     const location = useLocation();
+    const imageRef = useRef(null);
+
+    const handleMouseMove = (e) => {
+        const { offsetWidth: width, offsetHeight: height } = imageRef.current;
+        const { offsetX: x, offsetY: y } = e.nativeEvent;
+
+        const rotateX = ((y / height) - 0.5) * 20; // Sesuaikan angka untuk intensitas
+        const rotateY = ((x / width) - 0.5) * -20; // Sesuaikan angka untuk intensitas
+
+        imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    };
+
+    const handleMouseLeave = () => {
+        imageRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)'; // Kembali ke posisi semula
+    };
 
     useEffect(() => {
         setDisplayedText('');
@@ -57,10 +72,9 @@ const Skills = () => {
                     <Sidebar />
                 </div>
             )}
-            <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6">
-                <div className="aos-init aos-animate" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                    <img src="/avatar.png" alt="React" className="hover-image h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" />
-                </div>
+            <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6"> 
+                    <img ref={imageRef} src="/avatar.png" alt="React" className="hover-image h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}/>
                 <section className="flex-1 lg:p-6 lg:pt-8">
                     {/* Adjust the margin-top to bring the text higher */}
                     <h2 className="text-xl lg:text-3xl ml-7 lg:ml-0 mt-[-70px] font-bold text-gray-900 dark:text-white">
