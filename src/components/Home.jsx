@@ -62,7 +62,15 @@ const Home = () => {
                             <p className="text-xl md:text-4xl font-semibold py-2 text-gray-800 dark:text-white">Websites</p>
                         </div>
                     </div>
-                    <div className="flex right-32 items-center space-x-7 lg:space-x-14 social slide-in-left">
+                    <div className="fl
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    ex right-32 items-center space-x-7 lg:space-x-14 social slide-in-left">
                         <a href="https://facebook.com/achmad.n.pradita" rel="noopener noreferrer" className="blue sm-item mb-20 rotate-clockwiseu ">
                             <SocialIcon url="https://facebook.com/achmad.n.pradita" style={{ width: iconSize, height: iconSize }} />
                         </a>

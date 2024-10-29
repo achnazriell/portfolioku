@@ -16,7 +16,7 @@ const Skills = () => {
             (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fadein','animate-zoomin');
+                        entry.target.classList.add('animate-fadein', 'animate-zoomin');
                     }
                 });
             },
@@ -56,9 +56,11 @@ const Skills = () => {
                 <div className="z-10 left-0 ">
                     <Sidebar />
                 </div>
-            )} 
+            )}
             <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6">
-                <img src="/avatar.png" alt="React" className="h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" />
+                <div className="aos-init aos-animate" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                    <img class="hover-image" src="/avatar.png" alt="React" className="h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" />
+                </div>
                 <section className="flex-1 lg:p-6 lg:pt-8">
                     {/* Adjust the margin-top to bring the text higher */}
                     <h2 className="text-xl lg:text-3xl ml-7 lg:ml-0 mt-[-70px] font-bold text-gray-900 dark:text-white">
@@ -69,21 +71,21 @@ const Skills = () => {
                             <img src="/react.png" className="h-6 lg:h-14 mt-6 lg:mt-10" alt="React" />
                             <h4 className="font-semibold text-xs lg:text-lg mt-2">ReactJs</h4>
                             <p className=" text-xxs lg:text-sm text-gray-500 dark:text-gray-400 text-start lg:text-left">
-                            ReactJs is a JavaScript library used to build component-based interactive user interfaces.
+                                ReactJs is a JavaScript library used to build component-based interactive user interfaces.
                             </p>
                         </div>
                         <div className="ml-7 lg:ml-0 flex flex-col items-start ">
                             <img src="/laravel.png" className="h-6 lg:h-14 mt-6 lg:mt-10" alt="Laravel" />
                             <h4 className="font-semibold text-xs lg:text-lg mt-2">Laravel</h4>
                             <p className="font-poppins text-xxs lg:text-sm text-gray-500 dark:text-gray-400 text-left">
-                            Laravel is an open-source web application framework based on PHP, utilizing the Model-View-Controller (MVC) architectural pattern.
+                                Laravel is an open-source web application framework based on PHP, utilizing the Model-View-Controller (MVC) architectural pattern.
                             </p>
                         </div>
                         <div className="ml-7 lg:ml-0 flex flex-col items-start ">
                             <img src="/tailwind.png" className="h-5 lg:h-10 mt-7 lg:mt-12" alt="Tailwind CSS" />
                             <h4 className="font-semibold text-xs lg:text-lg mt-2">Tailwind CSS</h4>
                             <p className="font-poppins text-xxs lg:text-sm text-gray-500 dark:text-gray-400 text-left">
-                            Tailwind CSS is a CSS framework that includes a set of utility classes for quickly building custom interfaces.
+                                Tailwind CSS is a CSS framework that includes a set of utility classes for quickly building custom interfaces.
                             </p>
                         </div>
                     </div>
