@@ -53,7 +53,7 @@ const About = () => {
                         </p>
 
                         <div className="w-0 h-0 p-0 mb-0  lg:w-60 lg:h-60 lg:p-3 lg:mb-20 text-gray-600 dark:text-gray-300 order-last">
-                            <img src='me.png' className="w-0 h-0 lg:w-52 lg:h-52" />
+                            <img src='me.png' className="w-0 h-0 lg:w-80 lg:h-52" />
                         </div>
                     </div>
                 </section>
