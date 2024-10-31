@@ -14,8 +14,8 @@ const Skills = () => {
         const { offsetWidth: width, offsetHeight: height } = imageRef.current;
         const { offsetX: x, offsetY: y } = e.nativeEvent;
 
-        const rotateX = ((y / height) - 0.5) * 300; // Sesuaikan angka untuk intensitas
-        const rotateY = ((x / width) - 0.5) * -300; // Sesuaikan angka untuk intensitas
+        const rotateX = ((y / height) - 0.5) * 1000; // Sesuaikan angka untuk intensitas
+        const rotateY = ((x / width) - 0.5) * -1000; // Sesuaikan angka untuk intensitas
 
         imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
