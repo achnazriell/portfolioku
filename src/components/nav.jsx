@@ -67,7 +67,7 @@ const Nav = () => {
 
             {/* Mobile Navigation */}
             <nav className="block sm:hidden">
-                <button onClick={toggleMenu} className="fixed top-5 right-8 flex flex-col justify-center items-center gap-1 backdrop-blur-xl z-50 h-4 w-4 rounded-lg">
+                <button onClick={toggleMenu} className="fixed top-5 right-8 flex flex-col justify-center items-center gap-1 backdrop-blur-3xl z-50 h-4 w-4 rounded-md">
                     <div className={`w-5 h-1 bg-black dark:bg-white transition-all ${isOpen ? 'rotate-45 translate-y-[12px]' : ''}`}></div>
                     <div className={`w-5 h-1 bg-black dark:bg-white transition-all ${isOpen ? 'opacity-0' : ''}`}></div>
                     <div className={`w-5 h-1 bg-black dark:bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-[1px]' : ''}`}></div>
