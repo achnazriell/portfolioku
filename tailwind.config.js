@@ -7,7 +7,7 @@ module.exports = {
       fontSize: {
         'xxs': '0.500rem',
         '2xs': '0.600rem', // Ukuran lebih kecil dari text-xs (10px)
-        '1xl': ['1.100rem', '2rem'], 
+        '1xl': '1.100rem', 
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Tambahkan Poppins sebagai font kustom
