@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
-        <nav className="absolute mt-5 lg:mt-12 pb-20 h-[50%]">
-            <ul className="list-none lg:space-y-20 md:space-y-6 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs lg:text-base">
+        <nav className="absolute mt-5 md:mt-5 lg:mt-12 pb-20 h-[50%]">
+            <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
                 <li className="rotate-90 w-max animate-slideInLeft">
                     <NavLink
                         to="/about"
