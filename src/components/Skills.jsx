@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'; // Ensure this import is present
+import { motion } from 'framer-motion';
 import Sidebar from './sidebar';
 
 const Skills = () => {

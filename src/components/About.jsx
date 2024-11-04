@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { FaUser } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import Sidebar from './sidebar';
 
 const About = () => {
