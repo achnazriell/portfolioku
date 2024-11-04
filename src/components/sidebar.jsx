@@ -1,20 +1,34 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
-<motion.div
-    className="flex left-0 top-1/4 z-10 space-y-4"
-    initial={{ x: -50, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 0.5 }}
-  >
-    <Link to="/about" className="block px-4 py-2 bg-gray-700 text-white rounded-md">About</Link>
-    <Link to="/skills" className="block px-4 py-2 bg-gray-700 text-white rounded-md">Skills</Link>
-    {/* Add other links as needed */}
-  </motion.div>
-
+        <nav className="absolute mt-5 md:mt-5 lg:mt-12 pb-20 h-[50%]">
+            <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
+                <li className="rotate-90 w-max animate-slideInLeft">
+                    <NavLink
+                        to="/about"
+                        className={({ isActive }) =>
+                            `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"
+                            }`
+                        }
+                    >
+                        About Me
+                    </NavLink>
+                </li>
+                <li className="rotate-90 w-max animate-slideInLeft">
+                    <NavLink
+                        to="/skills"
+                        className={({ isActive }) =>
+                            `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"
+                            }`
+                        }
+                    >
+                        My Skills
+                    </NavLink>
+                </li>
+            </ul>
+        </nav>
     );
 }
 
