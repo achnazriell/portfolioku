@@ -30,9 +30,8 @@ const About = () => {
 
     return (
         <div className="flex">
-            {(location.pathname === "/about" || location.pathname === "/skills") && (
                 <div className="z-10 left-0 ">
-                    <nav className="absolute mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%]">
+                    <nav className="fixed mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%]">
                         <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
                             <li className="rotate-90 w-max animate-slideInLeft">
                                 <NavLink
@@ -59,7 +58,7 @@ const About = () => {
                         </ul>
                     </nav>
                 </div>
-            )}
+        
             <div className="relative flex-1">
                 <section className="flex-1 lg:p-6 lg:pt-8">
                     <h1 className="flex ml-14 lg:ml-36 space-x-3 font-bold">
