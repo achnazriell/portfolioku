@@ -20,7 +20,7 @@ const About = () => {
             (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fadeinleft');
+                        entry.target.classList.add('animate-fadeoutleft');
                     }
                 });
             },
@@ -42,7 +42,7 @@ const About = () => {
         <div className="flex">
             {/* Conditionally rendered navigation with fadeInLeft animation */}
             {showNav && (
-                <nav className={`fixed top-0 left-0 mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%] z-10 transition-transform duration-500 ${showNav ? 'animate-fadeinleft' : 'hidden'}`}>
+                <nav className={`fixed top-0 left-0 mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%] z-10 transition-transform duration-500 ${showNav ? 'animate-fadeoutleft' : 'hidden'}`}>
                     <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
                         <li className="rotate-90 w-max">
                             <NavLink

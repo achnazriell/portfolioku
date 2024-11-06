@@ -7,7 +7,7 @@ module.exports = {
       fontSize: {
         'xxs': '0.500rem',
         '2xs': '0.600rem', // Ukuran lebih kecil dari text-xs (10px)
-        '1xl': ['1.150rem'], 
+        '1xl': ['1.150rem'],
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Tambahkan Poppins sebagai font kustom
@@ -79,8 +79,18 @@ module.exports = {
             opacity: 1,
           },
         },
+        "fade-out-left": {
+          "0%": {
+            opacity: 1,
+          },
+          "100%": {
+            opacity: 0,
+            transform: "translate3d(-100%, 0, 0)",
+          },
+        },
       },
       animation: {
+        fadeoutleft: 'fade-out-left 1s ease-in-out 0.25s 1',
         zoomin: 'zoom-in 0.5s ease-in-out 0s 1',
         zoomin1: 'zoom-in 1s ease-in-out 0s 1',
         zoomin2: 'zoom-in 1.5s ease-in-out 0s 1',
