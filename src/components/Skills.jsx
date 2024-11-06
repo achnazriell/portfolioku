@@ -66,7 +66,6 @@ const Skills = () => {
     return (
         <div className="flex">
             {/* Ensure Sidebar is clickable by giving it a higher z-index and fixed position */}
-            {(location.pathname === "/about" || location.pathname === "/skills") && (
                 <div className="z-10 left-0 ">
                     <nav className="absolute mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%]">
                         <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
@@ -95,7 +94,7 @@ const Skills = () => {
                         </ul>
                     </nav>
                 </div>
-            )}
+
             <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6">
                 <img ref={imageRef} src="/avatar.png" alt="React" className="hover-image h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave} />
