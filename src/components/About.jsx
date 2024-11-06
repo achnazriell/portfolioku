@@ -4,14 +4,15 @@ import { useLocation, NavLink } from 'react-router-dom';
 const About = () => {
     const paragraphRef = useRef(null);
     const location = useLocation();
-    const [showNav, setShowNav] = useState(false);
+    const [navAnimation, setNavAnimation] = useState('slideInLeft');
 
     useEffect(() => {
-        // Cek apakah pengguna sedang di halaman About
+        // Jika pengguna di halaman /about, gunakan animasi slideInLeft
         if (location.pathname === '/about') {
-            setShowNav(true);  // Tampilkan navigasi
+            setNavAnimation('slideInLeft');
         } else {
-            setShowNav(false); // Sembunyikan navigasi
+            // Ketika meninggalkan halaman /about, gunakan animasi fadeOutLeft
+            setNavAnimation('fadeOutLeft');
         }
     }, [location]);
 
@@ -20,7 +21,7 @@ const About = () => {
             (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fadeoutleft');
+                        entry.target.classList.add('animate-fadeinleft');
                     }
                 });
             },
@@ -40,33 +41,31 @@ const About = () => {
 
     return (
         <div className="flex">
-            {/* Conditionally rendered navigation with fadeInLeft animation */}
-            {showNav && (
-                <nav className={`fixed top-0 left-0 mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%] z-10 transition-transform duration-500 ${showNav ? 'animate-fadeoutleft' : 'hidden'}`}>
-                    <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
-                        <li className="rotate-90 w-max">
-                            <NavLink
-                                to="/about"
-                                className={({ isActive }) =>
-                                    `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"}`
-                                }
-                            >
-                                About Me
-                            </NavLink>
-                        </li>
-                        <li className="rotate-90 w-max">
-                            <NavLink
-                                to="/skills"
-                                className={({ isActive }) =>
-                                    `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"}`
-                                }
-                            >
-                                My Skills
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>
-            )}
+            {/* Navigation positioned fixed */}
+            <nav className={`fixed top-0 left-4 mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%] z-10 transition-all duration-500 ${location.pathname === '/about' ? `animate-${navAnimation}` : 'hidden'}`}>
+                <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
+                    <li className="rotate-90 w-max">
+                        <NavLink
+                            to="/about"
+                            className={({ isActive }) =>
+                                `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"}`
+                            }
+                        >
+                            About Me
+                        </NavLink>
+                    </li>
+                    <li className="rotate-90 w-max">
+                        <NavLink
+                            to="/skills"
+                            className={({ isActive }) =>
+                                `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"}`
+                            }
+                        >
+                            My Skills
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
 
             {/* Main Content */}
             <div className="relative flex-1 ml-[50px] lg:ml-[80px]">
