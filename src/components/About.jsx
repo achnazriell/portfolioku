@@ -1,20 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import Sidebar from './sidebar';
 
 const About = () => {
     const paragraphRef = useRef(null);
     const location = useLocation();
-    const [navAnimation, setNavAnimation] = useState('slideInLeft');
-
-    useEffect(() => {
-        // Jika pengguna di halaman /about, gunakan animasi slideInLeft
-        if (location.pathname === '/about') {
-            setNavAnimation('slideInLeft');
-        } else {
-            // Ketika meninggalkan halaman /about, gunakan animasi fadeOutLeft
-            setNavAnimation('fadeOutLeft');
-        }
-    }, [location]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -41,34 +32,12 @@ const About = () => {
 
     return (
         <div className="flex">
-            {/* Navigation positioned fixed */}
-            <nav className={`fixed top-0 left-4 mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%] z-10 transition-all duration-500 ${location.pathname === '/about' ? `animate-${navAnimation}` : 'hidden'}`}>
-                <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
-                    <li className="rotate-90 w-max">
-                        <NavLink
-                            to="/about"
-                            className={({ isActive }) =>
-                                `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"}`
-                            }
-                        >
-                            About Me
-                        </NavLink>
-                    </li>
-                    <li className="rotate-90 w-max">
-                        <NavLink
-                            to="/skills"
-                            className={({ isActive }) =>
-                                `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"}`
-                            }
-                        >
-                            My Skills
-                        </NavLink>
-                    </li>
-                </ul>
-            </nav>
-
-            {/* Main Content */}
-            <div className="relative flex-1 ml-[50px] lg:ml-[80px]">
+            {(location.pathname === "/about" || location.pathname === "/skills") && (
+                <div className="z-10 left-0 ">
+                    <Sidebar />
+                </div>
+            )}
+            <div className="relative flex-1">
                 <section className="flex-1 lg:p-6 lg:pt-8">
                     <h1 className="flex ml-14 lg:ml-36 space-x-3 font-bold">
                         <span className="text-3xl lg:text-5xl animate-fadeInUp">About</span>

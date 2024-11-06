@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'; // Ensure this import is present
+import { motion } from 'framer-motion';
+import Sidebar from './sidebar';
 
 const Skills = () => {
     const paragraphRef = useRef(null);
@@ -66,38 +68,14 @@ const Skills = () => {
     return (
         <div className="flex">
             {/* Ensure Sidebar is clickable by giving it a higher z-index and fixed position */}
+            {(location.pathname === "/about" || location.pathname === "/skills") && (
                 <div className="z-10 left-0 ">
-                    <nav className=" absolute mt-5 md:mt-5 lg:mt-20 pb-20 h-[50%]">
-                        <ul className="list-none lg:space-y-20 md:space-y-5 space-y-5 backdrop-blur-md h-full w-5 lg:w-10 flex flex-col justify-evenly items-center font-semibold text-xs md:text-xs lg:text-base">
-                            <li className="rotate-90 w-max animate-slideInLeft">
-                                <NavLink
-                                    to="/about"
-                                    className={({ isActive }) =>
-                                        `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"
-                                        }`
-                                    }
-                                >
-                                    About Me
-                                </NavLink>
-                            </li>
-                            <li className="rotate-90 w-max animate-slideInLeft">
-                                <NavLink
-                                    to="/skills"
-                                    className={({ isActive }) =>
-                                        `relative py-4 before:transition-all before:absolute before:bottom-2 before:left-0 before:h-0.5 ${isActive ? "text-blue-600 before:bg-blue-600 before:w-full" : "before:bg-gray-900 dark:before:bg-white before:w-0"
-                                        }`
-                                    }
-                                >
-                                    My Skills
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </nav>
+                    <Sidebar />
                 </div>
-
-            <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6">
-                <img ref={imageRef} src="/avatar.png" alt="React" className="hover-image h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave} />
+            )}
+            <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6"> 
+                    <img ref={imageRef} src="/avatar.png" alt="React" className="hover-image h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin" onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}/>
                 <section className="flex-1 lg:p-6 lg:pt-8">
                     {/* Adjust the margin-top to bring the text higher */}
                     <h2 className="text-xl lg:text-3xl ml-7 lg:ml-0 mt-[-70px] font-bold text-gray-900 dark:text-white">
