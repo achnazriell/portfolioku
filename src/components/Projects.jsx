@@ -47,7 +47,7 @@ const Projects = () => {
                     <div className="flex flex-col items-start">
                         {/* Container gambar yang memiliki posisi relative */}
                         <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative ">
-                            <img src="/project1.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3 animate-zoomin3" alt="React" />
+                            <img src="/project1.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3 animate-zoomin5" alt="React" />
                         </div>
 
                         {/* Container flex untuk heading dan ikon GitHub */}
@@ -81,7 +81,7 @@ const Projects = () => {
                     <div className="flex flex-col items-start">
                     {/* Container gambar yang memiliki posisi relative */}
                     <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative ">
-                        <img src="/project2.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3 animate-zoomin3" alt="React" />
+                        <img src="/project2.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3 animate-zoomin5" alt="React" />
                     </div>
 
                     {/* Container flex untuk heading dan ikon GitHub */}
