@@ -46,7 +46,7 @@ const Projects = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-10 space-x-0  mx-2 lg:mx-40 lg:mb-60 mb-20">
                     <div className="flex flex-col items-start">
                         {/* Container gambar yang memiliki posisi relative */}
-                        <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative">
+                        <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative animate-zoomin">
                             <img src="/project1.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3" alt="React" />
                         </div>
 
@@ -80,7 +80,7 @@ const Projects = () => {
                     </div>
                     <div className="flex flex-col items-start">
                     {/* Container gambar yang memiliki posisi relative */}
-                    <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative">
+                    <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative animate-zoomin">
                         <img src="/project2.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3" alt="React" />
                     </div>
 
