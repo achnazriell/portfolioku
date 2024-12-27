@@ -101,8 +101,8 @@ const Home = () => {
                 <h2 className="text-2xl lg:text-5xl mt-10 mb-5 lg:mb-8  text-center font-semibold font-poppins text-gray-900 dark:text-white">
                     My Favorite Project
                 </h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-10 space-x-0  mx-2 lg:mx-40 lg:mb-60 mb-20">
-                    <div className="flex flex-col md:items-center lg:items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 lg:gap-10 space-x-0  mx-2 lg:mx-40 lg:mb-60 mb-20">
+                    <div className="flex flex-col md:items-center lg:items-start max-w-96">
                         {/* Container gambar yang memiliki posisi relative */}
                         <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative">
                             <img src="/project1.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3" alt="React" />
