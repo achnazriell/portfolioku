@@ -19,7 +19,7 @@ const Technology = () => {
             </h2>
             <br />
             <br />
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 mx-2 animate-fadeIn">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-16 mx-2 animate-fadeIn">
                 <div className="flex flex-col items-start">
                     <img src="\react.png" className="h-9 lg:h-14 mt-6 lg:mt-10" alt="React" />
                     <h4 className="font-semibold text-lg mt-2">ReactJs</h4>
