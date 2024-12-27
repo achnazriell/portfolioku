@@ -53,8 +53,8 @@ const About = () => {
                         </div>
 
                         {/* Wrap image with a relative positioned container */}
-                        <div className="relative">
-                            <img src='me.png' className="bg-white text-white w-0 h-0 lg:w-60 lg:h-80 lg:mb-36 lg:mt-[-60px]" />
+                        <div className="relative bg-white text-white">
+                            <img src='me.png' className=" w-0 h-0 lg:w-60 lg:h-80 lg:mb-36 lg:mt-[-60px]" />
                         </div>
                     </div>
                 </section>
