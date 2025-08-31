@@ -1,11 +1,10 @@
-import React from 'react';
-import Nav from './nav';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Technology from './Technology';
-import Projects from './Projects';
-import Home from './Home';
-import About from './About';
-import Skills from './Skills';
+import Nav from "./nav"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+import Technology from "./Technology"
+import Projects from "./Projects"
+import Home from "./Home"
+import About from "./About"
+import Skills from "./Skills"
 
 const Main = () => {
   return (
@@ -32,13 +31,11 @@ const Main = () => {
               <img src="\tailwind.png" className="h-2 lg:h-3" alt="Tailwind CSS" />
             </div>
           </div>
-          <p className="text-xxs lg:text-xs font-light">
-            Created by Achmad Nazriel Pradita All Rights Reserved
-          </p>
+          <p className="text-xxs lg:text-xs font-light">Created by Achmad Nazriel Pradita All Rights Reserved</p>
         </footer>
       </div>
     </Router>
-  );
+  )
 }
 
-export default Main;
+export default Main

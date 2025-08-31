@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Enhanced fade animations */
 @keyframes fadeInUp {
   from {
-    transform: translateY(20px);
+    transform: translateY(30px);
     opacity: 0;
   }
   to {
@@ -15,7 +16,7 @@
 
 @keyframes fadeInLeft {
   from {
-    transform: translateX(-3  0px);
+    transform: translateX(-40px);
     opacity: 0;
   }
   to {
@@ -24,10 +25,117 @@
   }
 }
 
+/* New fade in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Enhanced animation classes */
 .animate-fadeInUp {
-  animation: fadeInUp 1s ease-in-out forwards;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .animate-fadeInLeft {
-  animation: fadeInLeft 1s ease-in-out forwards;
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.6s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.animate-zoomin {
+  animation: zoomIn 0.6s ease-out 0.1s both;
+}
+.animate-zoomin1 {
+  animation: zoomIn 0.6s ease-out 0.2s both;
+}
+.animate-zoomin2 {
+  animation: zoomIn 0.6s ease-out 0.3s both;
+}
+.animate-zoomin3 {
+  animation: zoomIn 0.6s ease-out 0.4s both;
+}
+.animate-zoomin4 {
+  animation: zoomIn 0.6s ease-out 0.5s both;
+}
+.animate-zoomin5 {
+  animation: zoomIn 0.6s ease-out 0.6s both;
+}
+.animate-zoomin6 {
+  animation: zoomIn 0.6s ease-out 0.7s both;
+}
+.animate-zoomin7 {
+  animation: zoomIn 0.6s ease-out 0.8s both;
+}
+
+/* Enhanced responsive utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .backdrop-blur-strong {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
 }
