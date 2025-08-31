@@ -56,14 +56,14 @@ const About = () => {
                 </div>
             )}
             <div className="relative flex-1">
-                <section className="flex-1 lg:p-6 lg:pt-8">
+                <section className="flex-col lg:flex-row lg:items-start lg:gap-8 lg:p-6 lg:pt-8">
                     <h1 className="flex ml-14 lg:ml-36 space-x-3 font-bold">
                         <span className="text-3xl lg:text-6xl animate-fadeInUp">About</span>
                         <span className="text-3xl lg:text-6xl animate-fadeInUp">Me</span>
                     </h1>
 
                     <div className="lg:mt-3 mt-3 ml-14 lg:ml-36">
-                        <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
+                        <div className="flex-1">
                             <div className="flex-1 lg:max-w-2xl">
                                 <p
                                     ref={paragraphRef}
