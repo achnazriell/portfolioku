@@ -76,8 +76,7 @@ const Nav = () => {
           <li>
             <a
               className="relative text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 hover:before:w-full before:transition-all before:duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-blue-500 dark:before:bg-blue-400"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=acmassirau@gmail.com&su=Hello "
-            >
+              href="https://wa.me/+6287760946560">
               Contact
             </a>
           </li>

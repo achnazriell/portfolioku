@@ -279,7 +279,7 @@ const Home = () => {
           Need Help ?
         </h2>
         <div className="flex justify-center text-xs sm:text-sm lg:text-base mt-5">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=acmassirau@gmail.com&su=Hello ">
+          <a href="https://wa.me/+6287760946560">
             <button className="border-blue-500 border-2 rounded-3xl px-4 py-2 font-medium hover:bg-blue-700 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
               Contact Me
             </button>
