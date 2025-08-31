@@ -56,24 +56,32 @@ const About = () => {
             <div className="relative flex-1">
                 <section className="flex flex-col lg:flex-row lg:items-start lg:gap-12 lg:p-6 lg:pt-8">
                     {/* Kiri: Heading + Paragraf */}
-                    <div className="flex-1 lg:ml-36">
+                    <div className="flex-1 ml-16 lg:ml-36">
                         <h1 className="flex space-x-3 font-bold">
-                            <span className="text-3xl lg:text-6xl animate-fadeInUp">About</span>
-                            <span className="text-3xl lg:text-6xl animate-fadeInUp">Me</span>
+                            <span className="text-2xl lg:text-6xl animate-fadeInUp">About</span>
+                            <span className="text-2xl lg:text-6xl animate-fadeInUp">Me</span>
                         </h1>
 
                         <p
                             ref={paragraphRef}
                             className="font-poppins text-xs lg:text-xl mt-4 mb-8 text-gray-600 dark:text-gray-300 animate-fadeInLeft leading-relaxed"
                         >
-                            My name is Achmad Nazriel Pradita, I'm from Mojokerto and now<br></br>
-                            I'm learning React as a Front-end developer. I'm learning React<br></br>
-                            by self-exploration because it feels fun for me to do this and<br></br>
-                            I also do freelance projects. I'm a 2nd grade student at <br></br>
-                            SMKN 1 Dlanggu majoring in Rekayasa Perangkat Lunak <br></br>
-                            (Software Engineering) who has a lot of interest in development,<br></br>
-                            especially in websites, and I am currently exploring React.<br></br>
+                            My name is Achmad Nazriel Pradita, I'm from Mojokerto and now
+                            <br className="hidden lg:inline" />
+                            I'm learning React as a Front-end developer. I'm learning React
+                            <br className="hidden lg:inline" />
+                            by self-exploration because it feels fun for me to do this and
+                            <br className="hidden lg:inline" />
+                            I also do freelance projects. I'm a 2nd grade student at
+                            <br className="hidden lg:inline" />
+                            SMKN 1 Dlanggu majoring in Rekayasa Perangkat Lunak
+                            <br className="hidden lg:inline" />
+                            (Software Engineering) who has a lot of interest in development,
+                            <br className="hidden lg:inline" />
+                            especially in websites, and I am currently exploring React.
+                            <br className="hidden lg:inline" />
                         </p>
+
                     </div>
 
                     {/* Kanan: Foto */}
