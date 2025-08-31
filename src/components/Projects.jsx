@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect } from "react"
 // We'll use an external CSS file for the keyframes animation
 

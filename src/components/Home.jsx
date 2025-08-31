@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { Outlet } from "react-router-dom"
 import { SocialIcon } from "react-social-icons"
