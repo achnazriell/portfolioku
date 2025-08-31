@@ -66,11 +66,7 @@ const About = () => {
                             ref={paragraphRef}
                             className="font-poppins text-xs lg:text-xl mt-4 mb-8 text-gray-600 dark:text-gray-300 animate-fadeInLeft leading-relaxed"
                         >
-                            My name is Achmad Nazriel Pradita, I'm from Mojokerto and now I'm learning React as a Front-end
-                            developer. I'm learning React by self-exploration because it feels fun for me to do this and I also do
-                            freelance projects. I'm a 2nd grade student at SMKN 1 Dlanggu majoring in Rekayasa Perangkat Lunak
-                            (Software Engineering) who has a lot of interest in development, especially in websites, and I am
-                            currently exploring React.
+                            My name is Achmad Nazriel Pradita, I'm from Mojokerto and now I'm learning React as a Front-end developer. I'm learning React by self-exploration because it feels fun for me to do this and I also do freelance projects. I'm a 2nd grade student at SMKN 1 Dlanggu majoring in Rekayasa Perangkat Lunak (Software Engineering) who has a lot of interest in development, especially in websites, and I am currently exploring React.
                         </p>
                     </div>
 
