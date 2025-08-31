@@ -83,7 +83,7 @@ const Skills = () => {
                             ref={imageRef}
                             src="/avatar.png"
                             alt="Achmad Nazriel Pradita"
-                            className="w-96  h-96 mb-20 rounded-3xl transition-all duration-300 ease-out"
+                            className="h-96 w-96 lg:mt-[-70px] lg:mr-4 animate-zoomin transition-all duration-300 ease-out"
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                             style={{ transformStyle: "preserve-3d" }}
