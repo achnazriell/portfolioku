@@ -13,26 +13,20 @@ const Skills = () => {
   const imageRef = useRef(null)
 
   const handleMouseMove = (e) => {
-    if (!imageRef.current) return
+        if (!imageRef.current) return
+        const { offsetWidth: width, offsetHeight: height } = imageRef.current
+        const { offsetX: x, offsetY: y } = e.nativeEvent
 
-    const rect = imageRef.current.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const width = rect.width
-    const height = rect.height
+        const rotateX = (y / height - 0.5) * 20
+        const rotateY = (x / width - 0.5) * -20
 
-    const rotateX = (y / height - 0.5) * 30 // Reduced intensity for smoother movement
-    const rotateY = (x / width - 0.5) * -30 // Reduced intensity for smoother movement
+        imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    }
 
-    imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-    imageRef.current.style.transition = "transform 0.1s ease-out" // Added smooth transition
-  }
-
-  const handleMouseLeave = () => {
-    if (!imageRef.current) return
-    imageRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)"
-    imageRef.current.style.transition = "transform 0.3s ease-out"
-  }
+    const handleMouseLeave = () => {
+        if (!imageRef.current) return
+        imageRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)"
+    }
 
   useEffect(() => {
     setDisplayedText("")
@@ -87,7 +81,7 @@ const Skills = () => {
           ref={imageRef}
           src="/avatar.png"
           alt="Avatar"
-          className="hover-image h-32 w-32 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin cursor-pointer"
+          className="hover-image h-32 w-32 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin cursor-pointer transition-all duration-300 ease-out"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           style={{ transformStyle: "preserve-3d" }}
