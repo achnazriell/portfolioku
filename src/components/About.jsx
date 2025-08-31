@@ -77,7 +77,8 @@ const About = () => {
                     </div>
 
                     {/* Kanan: Foto */}
-                    <div className="lg:flex-shrink-0 lg:mr-20 mt-6 lg:mt-0">
+                    {/* Kanan: Foto */}
+                    <div className="hidden lg:flex lg:flex-shrink-0 lg:mr-20 mt-6 lg:mt-0">
                         <div className="relative">
                             <img
                                 ref={imageRef}
