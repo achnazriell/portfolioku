@@ -56,7 +56,7 @@ const About = () => {
             <div className="relative flex-1">
                 <section className="flex flex-col lg:flex-row lg:items-start lg:gap-12 lg:p-6 lg:pt-8">
                     {/* Kiri: Heading + Paragraf */}
-                    <div className="flex-1 ml-16 lg:ml-36">
+                    <div className="flex-1 ml-12 lg:ml-36">
                         <h1 className="flex space-x-3 font-bold">
                             <span className="text-2xl lg:text-6xl animate-fadeInUp">About</span>
                             <span className="text-2xl lg:text-6xl animate-fadeInUp">Me</span>

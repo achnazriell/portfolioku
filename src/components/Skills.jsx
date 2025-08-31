@@ -81,7 +81,7 @@ const Skills = () => {
                     ref={imageRef}
                     src="/avatar.png"
                     alt="Avatar"
-                    className="hidden lg:block hover-image h-32 w-32 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin cursor-pointer transition-all duration-300 ease-out"
+                    className="hidden h-32 w-32 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin cursor-pointer transition-all duration-300 ease-out"
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
                     style={{ transformStyle: "preserve-3d" }}
