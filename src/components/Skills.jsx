@@ -77,13 +77,13 @@ const Skills = () => {
                 </div>
             )}
             <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6">
-                <div className="hidden lg:flex lg:flex-shrink-0 lg:mr-20 mt-6 lg:mt-0">
+                <div className="hidden lg:flex lg:flex-shrink-0 lg:mr-20">
                     <div className="relative">
                         <img
                             ref={imageRef}
                             src="/avatar.png"
                             alt="Achmad Nazriel Pradita"
-                            className="w-96  h-96 mb-10 rounded-3xl transition-all duration-300 ease-out"
+                            className="w-96  h-96 mb-20 rounded-3xl transition-all duration-300 ease-out"
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                             style={{ transformStyle: "preserve-3d" }}
