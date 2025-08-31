@@ -89,7 +89,6 @@ const About = () => {
                                 onMouseLeave={handleMouseLeave}
                                 style={{ transformStyle: "preserve-3d" }}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg pointer-events-none"></div>
                         </div>
                     </div>
                 </section>
