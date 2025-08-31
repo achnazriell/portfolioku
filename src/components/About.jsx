@@ -84,7 +84,7 @@ const About = () => {
                                 ref={imageRef}
                                 src="/ngerii.jpg"
                                 alt="Achmad Nazriel Pradita"
-                                className="w-64 h-80 object-cover rounded-lg shadow-lg transition-all duration-300 ease-out hover:shadow-2xl"
+                                className="w-64 h-80 rounded-xl transition-all duration-300 ease-out "
                                 onMouseMove={handleMouseMove}
                                 onMouseLeave={handleMouseLeave}
                                 style={{ transformStyle: "preserve-3d" }}
