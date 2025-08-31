@@ -77,15 +77,19 @@ const Skills = () => {
                 </div>
             )}
             <div className="flex flex-col lg:flex-row lg:ml-20 p-4 lg:p-6">
-                <img
-                    ref={imageRef}
-                    src="/avatar.png"
-                    alt="Avatar"
-                    className="hidden h-32 w-32 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin cursor-pointer transition-all duration-300 ease-out"
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                    style={{ transformStyle: "preserve-3d" }}
-                />
+                <div className="hidden lg:flex lg:flex-shrink-0 lg:mr-20 mt-6 lg:mt-0">
+                    <div className="relative">
+                        <img
+                            ref={imageRef}
+                            src="/avatar.png"
+                            alt="Achmad Nazriel Pradita"
+                            className="w-32 h-32 rounded-3xl transition-all duration-300 ease-out"
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                            style={{ transformStyle: "preserve-3d" }}
+                        />
+                    </div>
+                </div>
                 <section className="flex-1 lg:p-6 lg:pt-8">
                     {/* Adjust the margin-top to bring the text higher */}
                     <h2 className="text-xl lg:text-3xl ml-7 lg:ml-0 mt-[-70px] font-bold text-gray-900 dark:text-white">
