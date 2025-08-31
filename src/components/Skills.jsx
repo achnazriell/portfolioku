@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom" // Ensure this import is present
@@ -11,17 +13,25 @@ const Skills = () => {
   const imageRef = useRef(null)
 
   const handleMouseMove = (e) => {
-    const { offsetWidth: width, offsetHeight: height } = imageRef.current
-    const { offsetX: x, offsetY: y } = e.nativeEvent
+    if (!imageRef.current) return
 
-    const rotateX = (y / height - 0.5) * 50 // Sesuaikan angka untuk intensitas
-    const rotateY = (x / width - 0.5) * -50 // Sesuaikan angka untuk intensitas
+    const rect = imageRef.current.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const width = rect.width
+    const height = rect.height
+
+    const rotateX = (y / height - 0.5) * 30 // Reduced intensity for smoother movement
+    const rotateY = (x / width - 0.5) * -30 // Reduced intensity for smoother movement
 
     imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    imageRef.current.style.transition = "transform 0.1s ease-out" // Added smooth transition
   }
 
   const handleMouseLeave = () => {
-    imageRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)" // Kembali ke posisi semula
+    if (!imageRef.current) return
+    imageRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)"
+    imageRef.current.style.transition = "transform 0.3s ease-out"
   }
 
   useEffect(() => {
@@ -76,10 +86,11 @@ const Skills = () => {
         <img
           ref={imageRef}
           src="/avatar.png"
-          alt="React"
-          className="hover-image h-0 w-0 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin"
+          alt="Avatar"
+          className="hover-image h-32 w-32 lg:h-96 lg:w-96 mt-10 lg:mt-[-70px] lg:mr-4 animate-zoomin cursor-pointer"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
+          style={{ transformStyle: "preserve-3d" }}
         />
         <section className="flex-1 lg:p-6 lg:pt-8">
           {/* Adjust the margin-top to bring the text higher */}
