@@ -90,7 +90,7 @@ const About = () => {
                         <div className="relative">
                             <img
                                 ref={imageRef}
-                                src="/ngerii.jpg"
+                                src=""
                                 alt="Achmad Nazriel Pradita"
                                 className="w-72 h-72 rounded-3xl transition-all duration-300 ease-out"
                                 onMouseMove={handleMouseMove}
