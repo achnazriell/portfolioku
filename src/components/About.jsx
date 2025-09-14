@@ -91,7 +91,7 @@ const About = () => {
                             <img
                                 ref={imageRef}
                                 src=""
-                                alt="Achmad Nazriel Pradita"
+                                alt=""
                                 className="w-72 h-72 rounded-3xl transition-all duration-300 ease-out"
                                 onMouseMove={handleMouseMove}
                                 onMouseLeave={handleMouseLeave}
