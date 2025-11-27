@@ -119,7 +119,7 @@ const Home = () => {
               }`}
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2">Specialized in</p>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold py-2 text-gray-800 dark:text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold py-2 text-gray-800 dark:text-white bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 Websites
               </p>
             </div>
