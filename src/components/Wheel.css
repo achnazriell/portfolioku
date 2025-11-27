@@ -1,15 +1,19 @@
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(720deg); /* Rotasi penuh 2 kali */
-    }
+@keyframes spinGear {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.spin a {
-    transform: rotate(0deg);
-    animation: spin 3s ease-out forwards;
+.gear-rotate {
+  animation: spinGear 4s linear infinite;
+}
+
+.gear-hover:hover {
+  transform: scale(1.1) rotate(360deg);
+  transition: transform 0.8s ease-in-out;
 }
 
 /* Mengatur posisi dan styling tambahan */

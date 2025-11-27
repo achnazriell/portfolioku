@@ -105,6 +105,8 @@ module.exports = {
         slideinleft: "slide-in-left 0.5s ease-in-out 0.25s 1",
         fadeinleft: 'fade-in-left 1s ease-in-out 0s 1',
         slideInLeft: 'slideInLeft 0.5s ease-out forwards',
+        spinSlow: 'spin 6s linear infinite',
+
       },
     },
   },

@@ -1,6 +1,38 @@
-import { useState, useEffect } from "react"
+"use client"
+
+import { useState, useEffect, useRef } from "react"
 import { Outlet } from "react-router-dom"
 import { SocialIcon } from "react-social-icons"
+import ProjectCard, { projectsData } from "./ProjectCard"
+
+// Custom hook untuk scroll animation
+const useScrollAnimation = (threshold = 0.2) => {
+  const ref = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold },
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [threshold])
+
+  return [ref, isVisible]
+}
 
 const Home = () => {
   const words = ["Achmad Nazriel Pradita", "Front-end Developer"]
@@ -9,7 +41,12 @@ const Home = () => {
   const [loopNum, setLoopNum] = useState(0)
   const [typingSpeed, setTypingSpeed] = useState(150)
   const [iconSize, setIconSize] = useState(100)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isHeroVisible, setIsHeroVisible] = useState(false)
+
+  // Scroll animation refs for each section
+  const [outletRef, isOutletVisible] = useScrollAnimation(0.15)
+  const [projectRef, isProjectVisible] = useScrollAnimation(0.1)
+  const [contactRef, isContactVisible] = useScrollAnimation(0.3)
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,7 +64,7 @@ const Home = () => {
     window.addEventListener("resize", handleResize)
     handleResize()
 
-    setTimeout(() => setIsVisible(true), 300)
+    setTimeout(() => setIsHeroVisible(true), 300)
 
     return () => window.removeEventListener("resize", handleResize)
   }, [])
@@ -52,16 +89,22 @@ const Home = () => {
   }, [text, isDeleting])
 
   return (
-    <div className="flex">
-      <div className="flex-1 p-4 sm:p-6 lg:p-8 mb-6 lg:mb-28">
+    <div className="flex scroll-smooth">
+      <div className="flex-1">
+        {/* Section 1: Hero - Full viewport */}
         <section
-          className={`min-h-[60vh] lg:min-h-[70vh] mb-10 lg:mb-20 mt-4 lg:mt-6 flex flex-col text-center items-center justify-center transform transition-all duration-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          className={`min-h-screen mt-[-100px] flex flex-col text-center items-center justify-center px-4 sm:px-6 lg:px-8 transform transition-all duration-1000 ${
+            isHeroVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="text-center text-gray-500 dark:text-gray-400 max-w-4xl mx-auto px-4">
-            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="block mb-2">Hello,</span>
+          <div className="text-center text-gray-500 dark:text-gray-400 max-w-4xl mx-auto">
+            {/* Floating animation for hello text */}
+            <div
+              className={`text-xl sm:text-xl md:text-2xl lg:text-4xl font-bold mb-4 transition-all duration-1000 delay-200 ${
+                isHeroVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"
+              }`}
+            >
+              <span className="block mb-2 animate-pulse">Hello,</span>
               <h2
                 id="typewriter"
                 className="index-module_type__E-SaG text-gray-800 dark:text-white font-mono min-h-[1.2em]"
@@ -69,17 +112,23 @@ const Home = () => {
                 I'am {text}
               </h2>
             </div>
-            <div className="pt-4 mb-8 lg:mb-12">
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-2">Specialized in</p>
-              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold py-2 text-gray-800 dark:text-white bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+
+            <div
+              className={`pt-4 mb-8 lg:mb-12 transition-all duration-1000 delay-500 ${
+                isHeroVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-8 opacity-0 scale-95"
+              }`}
+            >
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2">Specialized in</p>
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold py-2 text-gray-800 dark:text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 Websites
               </p>
             </div>
           </div>
 
+          {/* Social Icons with staggered animation */}
           <div
-            className={`flex items-center justify-center space-x-6 sm:space-x-8 lg:space-x-14 transform transition-all duration-1000 delay-500 ${
-              isVisible ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
+            className={`flex items-center justify-center space-x-6 sm:space-x-8 lg:space-x-14 transition-all duration-1000 delay-700 ${
+              isHeroVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
             }`}
           >
             {[
@@ -91,7 +140,7 @@ const Home = () => {
                     style={{ width: iconSize, height: iconSize }}
                   />
                 ),
-                delay: "0.6s",
+                delay: "0.8s",
               },
               {
                 href: "https://github.com/achnazriell",
@@ -103,7 +152,7 @@ const Home = () => {
                     />
                   </div>
                 ),
-                delay: "0.8s",
+                delay: "1.0s",
               },
               {
                 href: "https://instagram.com/achnazriell_",
@@ -138,7 +187,7 @@ const Home = () => {
                     </defs>
                   </svg>
                 ),
-                delay: "1.0s",
+                delay: "1.2s",
               },
             ].map((social, index) => (
               <a
@@ -146,146 +195,136 @@ const Home = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transform transition-all duration-700 hover:scale-110 hover:-translate-y-2 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                className={`transform transition-all duration-500 hover:scale-125 hover:-translate-y-3 hover:rotate-6 ${
+                  isHeroVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 }`}
-                style={{ transitionDelay: isVisible ? social.delay : "0s" }}
+                style={{ transitionDelay: isHeroVisible ? social.delay : "0s" }}
               >
                 {social.component}
               </a>
             ))}
           </div>
+
+          {/* Scroll indicator */}
+          <div
+            className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-1000 ${
+              isHeroVisible ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="flex flex-col items-center gap-2 animate-bounce">
+              <span className="text-sm text-gray-400">Scroll</span>
+              <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+          </div>
         </section>
 
-        <div
-          className={`mt-8 lg:mt-12 transform transition-all duration-1000 delay-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        {/* Section 2: Outlet (Skill & About) - Full viewport */}
+        <section
+          ref={outletRef}
+          className={`min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 transition-all duration-1000 ${
+            isOutletVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
           }`}
         >
           <Outlet />
-        </div>
+        </section>
 
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl mt-10 mb-5 lg:mb-8 text-center font-semibold font-poppins text-gray-900 dark:text-white">
-          My Favorite Project
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-10 space-x-0 mx-2 lg:mx-10 lg:mb-60 mb-20">
-          <div className="flex flex-col md:items-center lg:items-start max-w-[400px]">
-            <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative">
-              <img src="/project3.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3" alt="React" />
-            </div>
-            <div className="flex items-center justify-between w-full mt-2">
-              <h4 className="font-bold text-xl">Smart-LAB (Mini Project)</h4>
-              <a href="https://github.com/Alter-Lexcy/Smart-Lab" className="lg:mr-5 mr-2">
-                <svg style={{ width: 20 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <path
-                      fill="#00BFFF"
-                      d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"
-                      fillRule="nonzero"
-                    />
-                  </g>
-                </svg>
-              </a>
-            </div>
-            <p className="mb-2 text-xs sm:text-sm lg:text-base font-poppins text-gray-500 dark:text-gray-400 text-left">
-              SmartLab is a Learning Management System (LMS) designed to streamline the management of educational
-              content, facilitate communication, and enhance learning experiences for both instructors and students. It
-              offers features for course creation, student enrollment, and progress tracking, all within an intuitive
-              and responsive interface.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin">Laravel</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin1">PHP</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin2">Tailwind CSS</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin3">Blade</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin4">Javascript</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin5">HTML5</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin6">CSS3</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin7">Bootstrap</div>
-            </div>
-          </div>
+        {/* Section 3: My Favorite Project - Full viewport */}
+        <section
+          ref={projectRef}
+          className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12"
+        >
+          <h2
+            className={`text-3xl lg:text-5xl mb-12 text-center font-semibold transition-all duration-700 ${
+              isProjectVisible ? "translate-y-0 opacity-100 scale-100" : "-translate-y-8 opacity-0 scale-95"
+            }`}
+          >
+            <span className="bg-gradient-to-b from-blue-700 to-cyan-500 bg-clip-text text-transparent">
+              My Favorite Project
+            </span>
+          </h2>
 
-          <div className="flex flex-col md:items-center lg:items-start max-w-[400px]">
-            <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative">
-              <img src="/project1.png" className="h-40 lg:h-48 w-80 lg:w-[400px] p-3" alt="React" />
-            </div>
-            <div className="flex items-center justify-between w-full mt-2">
-              <h4 className="font-bold text-xl">Web Comics (Pre Mini)</h4>
-              <a href="https://github.com/achnazriel/comics.git" className="lg:mr-3 mr-2">
-                <svg style={{ width: 20 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <path
-                      fill="#00BFFF"
-                      d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"
-                      fillRule="nonzero"
-                    />
-                  </g>
-                </svg>
-              </a>
-            </div>
-            <p className="mb-2 text-xs sm:text-sm lg:text-base font-poppins text-gray-500 dark:text-gray-400 text-left">
-              The web comic project involves both back-end and front-end development. The back end, built with Laravel,
-              handles comic and chapter management, including efficient creation, updating, and organization of content.
-              The front end focuses on delivering a responsive and user-friendly layout, ensuring readers can easily
-              navigate through comics and chapters.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin">Laravel</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin1">PHP</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin2">Tailwind</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin3">Blade</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin4">Javascript</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin5">HTML5</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin6">CSS3</div>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {projectsData.map((project, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-700 ${
+                  isProjectVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-90"
+                }`}
+                style={{
+                  transitionDelay: isProjectVisible ? `${index * 150 + 200}ms` : "0ms",
+                }}
+              >
+                <ProjectCard
+                  image={project.image}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  links={project.links}
+                  delay={0}
+                />
+              </div>
+            ))}
           </div>
-          <div className="flex flex-col md:items-center lg:items-start max-w-[400px]">
-            <div className="border-2 rounded-md border-gray-500 dark:border-gray-100 relative">
-              <img src="/project2.png" className="h-40 lg:h-48 w-80 lg:w-96 p-3" alt="React" />
-            </div>
-            <div className="flex items-center justify-between w-full mt-2">
-              <h4 className="font-bold text-xl">Manajemen Restoran</h4>
-              <a href="https://github.com/achnazriell/restoran.git" className="lg:mr-4 mr-2">
-                <svg style={{ width: 20 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <path
-                      fill="#00BFFF"
-                      d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"
-                      fillRule="nonzero"
-                    />
-                  </g>
-                </svg>
-              </a>
-            </div>
-            <p className="mb-2 text-xs sm:text-sm lg:text-base font-poppins text-gray-500 dark:text-gray-400 text-left">
-              The restaurant management system is designed to streamline and optimize various aspects of restaurant
-              operations. It includes both back-end and front-end functionalities. On the back end, the system manages
-              reservations, menu items, staff, and orders, allowing for efficient handling of customer preferences,
-              seating arrangements, and kitchen operations.
+        </section>
+
+        {/* Section 4: Need Help - Full viewport */}
+        <section
+          ref={contactRef}
+          className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12"
+        >
+          <div
+            className={`text-center transition-all duration-1000 ${
+              isContactVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-90"
+            }`}
+          >
+            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-poppins text-gray-900 dark:text-white mb-6">
+              Need Help ?
+            </h2>
+            <p
+              className={`text-gray-500 dark:text-gray-400 text-md mb-8 max-w-md mx-auto transition-all duration-700 delay-300 ${
+                isContactVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              Let's work together and bring your ideas to life
             </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin">Laravel</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin1">PHP</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin2">Bootstrap</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin3">Blade</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin4">Javascript</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin5">HTML5</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin6">CSS3</div>
-              <div className="bg-gray-400 lg:text-sm text-xs px-2 py-1 rounded-lg animate-zoomin7">Admin LTE</div>
-            </div>
+            <a
+              href="/contact"
+              className={`inline-block transition-all duration-700 delay-500 ${
+                isContactVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
+              <button className="relative overflow-hidden group border-blue-500 border-2 rounded-full px-6 py-2 font-medium text-blue-500 transition-all duration-500 hover:text-white hover:scale-110 hover:shadow-xl hover:shadow-blue-500/25">
+                <span className="relative z-10">Contact Me</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+              </button>
+            </a>
           </div>
-        </div>
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-4xl ml-2 lg:ml-0 text-center font-semibold font-poppins text-gray-900 dark:text-white mt-12">
-          Need Help ?
-        </h2>
-        <div className="flex justify-center text-xs sm:text-sm lg:text-base mt-5">
-          <a href="https://wa.me/+6287760946560">
-            <button className="border-blue-500 border-2 rounded-3xl px-4 py-2 font-medium hover:bg-blue-700 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
-              Contact Me
-            </button>
-          </a>
-        </div>
+        </section>
       </div>
+
+      {/* Custom styles for animations */}
+      <style>{`
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+        .animate-blink {
+          animation: blink 1s infinite;
+        }
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+          animation: gradient 3s ease infinite;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+      `}</style>
     </div>
   )
 }

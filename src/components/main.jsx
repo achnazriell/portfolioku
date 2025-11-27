@@ -5,6 +5,7 @@ import Projects from "./Projects"
 import Home from "./Home"
 import About from "./About"
 import Skills from "./Skills"
+import Contact from "./Contact"
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
             </Route>
             <Route path="/technology" element={<Technology />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
         {/* Footer */}
