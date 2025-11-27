@@ -78,7 +78,7 @@ const projectsData = [
   },
   {
     image: "/project3.png",
-    title: "Smart-LAB (Mini Project)",
+    title: "Smart-LAB (Mini Project & UKK)",
     description:
       "SmartLab is a Learning Management System (LMS) designed to streamline the management of educational content, facilitate communication, and enhance learning experiences for both instructors and students.",
     tags: ["Laravel", "PHP", "Tailwind CSS", "Blade", "Javascript", "HTML5", "CSS3", "Bootstrap"],
