@@ -19,7 +19,7 @@ const Contact = () => {
   // WhatsApp number - ganti dengan nomor Anda
   const WHATSAPP_NUMBER = "+6287760946560"
   // Email address - ganti dengan email Anda
-  const EMAIL_ADDRESS = "achmadnazriel@gmail.com"
+  const EMAIL_ADDRESS = "rawwwrrr@gmail.com"
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100)
