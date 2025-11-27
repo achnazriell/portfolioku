@@ -95,7 +95,7 @@ const About = () => {
                             <div className="relative">
                                 <img
                                     ref={imageRef}
-                                    src="../../public/ngerii.jpg"
+                                    src="aku.jpg"
                                     alt="Achmad Nazriel Pradita"
                                     className="w-56 h-64 xl:w-72 xl:h-80 object-cover rounded-2xl transition-all duration-300 ease-out border-2 border-border"
                                     onMouseMove={handleMouseMove}

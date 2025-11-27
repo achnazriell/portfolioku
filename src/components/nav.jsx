@@ -168,7 +168,7 @@ const Nav = () => {
             {darkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
           </button>
 
-          <ul className="flex flex-col text-3xl gap-6 text-center font-semibold">
+          <ul className="flex flex-col text-3xl gap-6 text-center space-y-8 font-semibold">
             {[
               { to: "/", label: "Home", delay: "0.1s" },
               { to: "/technology", label: "Technology", delay: "0.15s" },

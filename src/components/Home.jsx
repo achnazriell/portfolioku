@@ -107,7 +107,7 @@ const Home = () => {
               <span className="block mb-2 animate-pulse">Hello,</span>
               <h2
                 id="typewriter"
-                className="index-module_type__E-SaG text-gray-800 dark:text-white font-mono min-h-[1.2em]"
+                className="index-module_type__E-SaG  text-gray-800 dark:text-white font-mono min-h-[1.2em]"
               >
                 I'am {text}
               </h2>
