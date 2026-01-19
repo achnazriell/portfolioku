@@ -6,7 +6,7 @@ import Home from "./Home"
 import About from "./About"
 import Skills from "./Skills"
 import Contact from "./Contact"
-import Backsound from "./components/Backsound";
+import Backsound from "./Backsound";
 
 const Main = () => {
   return (
