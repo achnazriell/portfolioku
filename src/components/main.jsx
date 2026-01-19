@@ -6,10 +6,12 @@ import Home from "./Home"
 import About from "./About"
 import Skills from "./Skills"
 import Contact from "./Contact"
+import Backsound from "./components/Backsound";
 
 const Main = () => {
   return (
     <Router>
+      <Backsound />
       <div className="min-h-screen flex flex-col">
         <Nav />
         <div className="flex-1">
