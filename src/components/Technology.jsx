@@ -31,47 +31,47 @@ const Technology = () => {
     const technologies = [
         {
             name: "ReactJs",
-            image: "/react.png",
+            image: "/react.webp",
             description: "ReactJs is a JavaScript library used to build component-based interactive user interfaces.",
         },
         {
             name: "Laravel",
-            image: "/laravel.png",
+            image: "/laravel.webp",
             description:
                 "Laravel is an open-source web application framework based on PHP, utilizing the Model-View-Controller (MVC) architectural pattern.",
         },
         {
             name: "Tailwind CSS",
-            image: "/tailwind.png",
+            image: "/tailwind.webp",
             description:
                 "Tailwind CSS is a CSS framework that includes a set of utility classes for quickly building custom interfaces.",
         },
         {
             name: "C++",
-            image: "/c++.png",
+            image: "/c++.webp",
             description:
                 "C++ is a general-purpose programming language known for its performance, making it a popular choice for system software, game development, and real-time systems.",
         },
         {
             name: "HTML",
-            image: "/html.png",
+            image: "/html.webp",
             description:
                 "Hypertext Markup Language is used to create web pages. It is used to define the structure and content of a web page.",
         },
         {
             name: "CSS",
-            image: "/css.png",
+            image: "/css.webp",
             description:
                 "Cascading Style Sheets are rules for managing several components in a web so that it will be more structured and uniform.",
         },
         {
             name: "JavaScript",
-            image: "/js.png",
+            image: "/js.webp",
             description: "Javascript is a programming language used to add interactivity and dynamic behavior to websites.",
         },
         {
             name: "PHP",
-            image: "/php.png",
+            image: "/php.webp",
             description:
                 "PHP Hypertext Preprocessor, or simply PHP, is a general-purpose scripting language primarily used for web development.",
         },
@@ -119,7 +119,7 @@ const Technology = () => {
                     }}
                 >
                     <div className="mb-4 p-3 rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900 transition-colors duration-300">
-                        <img src="/bootstrap.png" className="h-12 w-12 lg:h-16 lg:w-16 object-contain" alt="Bootstrap" />
+                        <img src="/bootstrap.webp" className="h-12 w-12 lg:h-16 lg:w-16 object-contain" alt="Bootstrap" />
                     </div>
                     <h4 className="font-semibold text-lg lg:text-xl mb-3 text-gray-900 dark:text-white">Bootstrap</h4>
                     <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">

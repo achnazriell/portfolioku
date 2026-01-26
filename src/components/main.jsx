@@ -31,8 +31,8 @@ const Main = () => {
           <div className="flex justify-center items-center bg-transparent text-xxs lg:text-xs font-semibold gap-1 lg:gap-2 mt-4 lg:mt-0 ">
             Created Using
             <div className="flex gap-1">
-              <img src="\react.png" className="h-3 lg:h-4" alt="React" />
-              <img src="\tailwind.png" className="h-2 lg:h-3" alt="Tailwind CSS" />
+              <img src="\react.webp" className="h-3 lg:h-4" alt="React" />
+              <img src="\tailwind.webp" className="h-2 lg:h-3" alt="Tailwind CSS" />
             </div>
           </div>
           <p className="text-xxs lg:text-xs font-light">Created by Achmad Nazriel Pradita All Rights Reserved</p>

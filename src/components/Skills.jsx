@@ -7,18 +7,18 @@ import Sidebar from "./sidebar"
 const skills = [
   {
     name: "ReactJs",
-    icon: "/react.png",
+    icon: "/react.webp",
     description: "ReactJs is a JavaScript library used to build component-based interactive user interfaces.",
   },
   {
     name: "Laravel",
-    icon: "/laravel.png",
+    icon: "/laravel.webp",
     description:
       "Laravel is an open-source web application framework based on PHP, utilizing the MVC architectural pattern.",
   },
   {
     name: "Tailwind CSS",
-    icon: "/tailwind.png",
+    icon: "/tailwind.webp",
     description:
       "Tailwind CSS is a CSS framework that includes a set of utility classes for quickly building custom interfaces.",
   },
@@ -99,7 +99,7 @@ const Skills = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl" />
                 <img
                   ref={imageRef}
-                  src="../../public/avatar.png"
+                  src="../../public/avatar.webp"
                   alt="Achmad Nazriel Pradita"
                   className="relative w-48 h-48 xl:w-64 xl:h-64 object-cover rounded-2xl transition-all duration-300 ease-out "
                   onMouseMove={handleMouseMove}

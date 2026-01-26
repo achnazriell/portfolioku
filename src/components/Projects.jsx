@@ -69,7 +69,7 @@ const ProjectCard = ({ image, title, description, tags, links, delay = 0 }) => {
 
 const projectsData = [
   {
-    image: "/project4.png",
+    image: "/project4.webp",
     title: "Humanity-Timeline (FestikaJatim)",
     description:
       "The Humanity Timeline website showcases human history with an immersive dark theme and warm golden accents. In the 'Prehistoric Era,' a detailed 3D early-human character and floating artifact icons create a clear historical atmosphere.",
@@ -77,7 +77,7 @@ const projectsData = [
     links: { live: "https://humanity-timeline.vercel.app", github: "https://github.com/achnazriel/comics.git" },
   },
   {
-    image: "/project3.png",
+    image: "/project3.webp",
     title: "Smart-LAB (Mini Project & UKK)",
     description:
       "SmartLab is a Learning Management System (LMS) designed to streamline the management of educational content, facilitate communication, and enhance learning experiences for both instructors and students.",
@@ -85,7 +85,7 @@ const projectsData = [
     links: { github: "https://github.com/Alter-Lexcy/Smart-Lab" },
   },
   {
-    image: "/project1.png",
+    image: "/project1.webp",
     title: "Web Comics (Pre Mini)",
     description:
       "Web comic project involves both back-end and front-end development. The back end, built with Laravel, handles comic and chapter management, including efficient creation, updating, and organization of content.",
@@ -93,7 +93,7 @@ const projectsData = [
     links: { github: "https://github.com/achnazriel/comics.git" },
   },
   {
-    image: "/project2.png",
+    image: "/project2.webp",
     title: "Manajemen Restoran",
     description:
       "Restaurant Management adalah sistem manajemen restoran berbasis web yang dibangun menggunakan Laravel. Proyek ini memungkinkan pengelola restoran untuk mengatur menu, pesanan, dan laporan penjualan.",
