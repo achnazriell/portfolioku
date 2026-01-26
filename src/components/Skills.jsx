@@ -101,7 +101,7 @@ const Skills = () => {
                   ref={imageRef}
                   src="avatar.webp"
                   alt="Achmad Nazriel Pradita"
-                  className="relative w-48 h-48 xl:w-64 xl:h-64 object-cover rounded-2xl transition-all duration-300 ease-out "
+                  className="relative w-56 h-56 xl:w-64 xl:h-64 object-cover rounded-2xl transition-all duration-300 ease-out "
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                   style={{ transformStyle: "preserve-3d" }}
