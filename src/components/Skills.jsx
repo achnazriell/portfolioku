@@ -99,7 +99,7 @@ const Skills = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl" />
                 <img
                   ref={imageRef}
-                  src="../../public/avatar.webp"
+                  src="avatar.webp"
                   alt="Achmad Nazriel Pradita"
                   className="relative w-48 h-48 xl:w-64 xl:h-64 object-cover rounded-2xl transition-all duration-300 ease-out "
                   onMouseMove={handleMouseMove}
