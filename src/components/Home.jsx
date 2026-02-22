@@ -143,7 +143,7 @@ const Home = () => {
                 delay: "0.8s",
               },
               {
-                href: "https://github.com/achnazriell",
+                href: "#",
                 component: (
                   <div className="github-icon" style={{ width: iconSize, height: iconSize }}>
                     <img
